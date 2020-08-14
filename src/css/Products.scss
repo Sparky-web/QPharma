@@ -1,0 +1,136 @@
+.Products {
+  .prettified-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+
+    & > * {
+      height: 130px;
+      background: url("./img/mask.jpg") center;
+      background-size: cover;
+      cursor: pointer;
+      display: grid;
+
+      div {
+        width: 90%;
+        background: rgba(255, 255, 255, 0.3);
+        margin: auto 0 auto auto;
+        padding: 0.7rem;
+
+        h5 {
+          font-weight: 500;
+          font-size: 1.3rem;
+          position: relative;
+          margin: 0;
+          width: fit-content;
+          span {
+            opacity: 0.5;
+            font-size: 0.7rem;
+            top: 0;
+            right: -1rem;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+  .card {
+    border: 1px solid #eeeeee;
+    background-color: #ffffff;
+    padding: 1rem 1.3rem;
+    display: grid;
+    align-content: space-between;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .discount {
+        border: 1px solid #f28d4f;
+        background-color: #ffeade;
+        padding: 0.5rem;
+        color: #f28d4f;
+      }
+      .available {
+        color: #29aa4d;
+      }
+    }
+    .image {
+      margin: auto;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .name {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    .price-block {
+      display: flex;
+      align-items: center;
+      .protection {
+        display: flex;
+        align-items: center;
+        color: #753590;
+        font-weight: 600;
+         &>* {margin: 0 0.2rem}
+      }
+      .price {
+        margin-left: 2rem;
+        color: #343433;
+        font-size: 2rem;
+        font-weight: 600;
+        position: relative;
+        .prevPrice {
+          position: absolute;
+          text-decoration: line-through;
+          font-size: 1rem;
+          color: rgba(0, 0, 0, 0.3);
+          bottom: 0.5rem;
+          right: 0;
+
+          transform: translateX(120%);
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+    }
+    .collect {
+      cursor: pointer;
+      display: flex;
+      font-family: inherit;
+      border: none;
+      padding: 1rem;
+      background:  #29aa4d;
+      color: white;
+      font-size: 1rem;
+      * {margin: 0 0.2rem }
+      align-items: center;
+    }
+    .buy {
+      cursor: pointer;
+      background: none;
+      border: 0;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #29aa4d;
+      padding: 1rem;
+    }
+
+    & > * {
+      margin: 1rem 0;
+    }
+  }
+  .react-tabs__tab-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+  }
+}

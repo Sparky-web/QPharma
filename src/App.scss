@@ -1,0 +1,88 @@
+@import "css/Navbar";
+@import "css/Offer";
+@import "css/Products";
+
+@import "fonts/Graph.css";
+
+@font-face {
+  font-family: 'Geometria';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Geometria'), url('fonts/Geometria.woff') format('woff');
+}
+@font-face {
+  font-family: 'Geometria-Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Geometria-Light'), url('fonts/Geometria-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Geometria-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Geometria-Bold'), url('fonts/Geometria-Bold.woff') format('woff');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Geometria", sans-serif;
+  font-size: 16px;
+  @media (max-width: 760px) {
+    font-size: 14px;
+  }
+}
+
+.container,
+.container-fluid,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1140px;
+  }
+}
+
+.green {
+  color: #29aa4d
+}
+.header {
+  font-weight: 400;
+  max-width: 600px;
+  font-size: 3rem;
+}
+section {
+  padding: 3rem 0;
+}
