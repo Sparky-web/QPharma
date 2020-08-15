@@ -133,4 +133,67 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1rem;
   }
+  .react-tabs {
+    display: grid;
+  }
+  .displayMore {
+    margin: auto;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #898989;
+    cursor: pointer;
+  }
+  .displayAmount {
+    color: #898989;
+    justify-self: end;
+  }
+  .radio {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    color: #898989;
+  }
+  .active {
+    color: #29aa4d;
+    border-bottom: 1px solid #29aa4d;
+  }
+  .navigation {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    @media (max-width: 500px) {
+      display: grid;
+      grid-template-columns: auto;
+      .displayAmount {
+        margin-top: 1rem;
+        justify-self: auto;
+      }
+    }
+  }
+  .tabs-wrapper {
+    padding: 1rem 0;
+    display: flex;
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        position: relative;
+        color: #898989;
+        margin-left: 2rem;
+        span {
+          position: absolute;
+          top:0;
+          right: -0.7rem;
+          font-size: 0.7rem;
+        }
+      }
+      li.react-tabs__tab--selected {
+        color: #29aa4d;
+        border-bottom: 1px solid #29aa4d;
+      }
+    }
+  }
 }

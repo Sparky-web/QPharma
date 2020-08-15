@@ -10,10 +10,10 @@ function Card(props) {
         <div className="card" key={props.el.id}>
             <div className="top">
                 <div
-                    className="discount">-{100 - Math.round((props.el.price - props.el.discount) / (props.el.price / 100))}%
+                    className="discount">-{100 - Math.round(props.el.discountPrice / (props.el.price / 100))}%
                 </div>
                 <span
-                    className={props.el.available ? "available" : "not-available"}>{props.el.available ? "✓ В наличии" : "Нет в наличии"}
+                    className={props.el.isAvailable ? "available" : "not-available"}>{props.el.isAvailable ? "✓ В наличии" : "Нет в наличии"}
                                                     </span>
             </div>
             <div className="image"><img src={imageUrl} alt=""/>
@@ -27,7 +27,7 @@ function Card(props) {
                     </div>
                 </div>
                 <div className="price">
-                    {props.el.price - props.el.discount}p
+                    {props.el.discountPrice}p
                     <span className="prevPrice">{props.el.price}p</span>
                 </div>
             </div>

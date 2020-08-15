@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 
 export default gql`
-    query Page ($limit: Int, $start: Int) {
+    query Page ($limit: Int, $start: Int, $sort: String) {
         categories {
             uId,
             name,
@@ -9,11 +9,11 @@ export default gql`
                 url
             }
         },
-        masks (limit: $limit, start: $start) {
+        masks (limit: $limit, start: $start, sort: $sort) {
             id,
             name,
             price,
-            discount,
+            discountPrice,
             description,
             isAvailable,
             images {
@@ -21,6 +21,11 @@ export default gql`
             },
             categoryId,
             protection
-        }            
+        },
+        masksConnection {
+            aggregate {
+                totalCount
+            }
+        }
     }
 `;

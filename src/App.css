@@ -243,6 +243,71 @@ nav .close {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1rem;
 }
+.Products .react-tabs {
+  display: grid;
+}
+.Products .displayMore {
+  margin: auto;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #898989;
+  cursor: pointer;
+}
+.Products .displayAmount {
+  color: #898989;
+  justify-self: end;
+}
+.Products .radio {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  color: #898989;
+}
+.Products .active {
+  color: #29aa4d;
+  border-bottom: 1px solid #29aa4d;
+}
+.Products .navigation {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+@media (max-width: 500px) {
+  .Products .navigation {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .Products .navigation .displayAmount {
+    margin-top: 1rem;
+    justify-self: auto;
+  }
+}
+.Products .tabs-wrapper {
+  padding: 1rem 0;
+  display: flex;
+}
+.Products .tabs-wrapper ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.Products .tabs-wrapper ul li {
+  position: relative;
+  color: #898989;
+  margin-left: 2rem;
+}
+.Products .tabs-wrapper ul li span {
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
+  font-size: 0.7rem;
+}
+.Products .tabs-wrapper ul li.react-tabs__tab--selected {
+  color: #29aa4d;
+  border-bottom: 1px solid #29aa4d;
+}
 
 @font-face {
   font-family: "Geometria";
