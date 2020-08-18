@@ -34,6 +34,29 @@ function Index(props) {
                         </tfoot>
                     </table>
                 </div>
+
+                <form action="">
+                    <div className="inputGroup">
+                        <div>Ваше имя</div>
+                        <input type="text"/>
+                    </div>
+                    <div className="inputGroup">
+                        <div>Ваш телефон</div>
+                        <input type="text"/>
+                    </div>
+                    <div className="inputGroup">
+                        <div>Ваш Email</div>
+                        <input type="text"/>
+                    </div>
+                    <div className="inputGroup">
+                        <div>Название компании (необязательно)</div>
+                        <input type="text"/>
+                    </div>
+                    <div className="checkboxGroup">
+                        <input type="checkbox"/>
+                        <div>Согласен с обработкой персональных данных</div>
+                    </div>
+                </form>
             </div>
         </section>
     );
