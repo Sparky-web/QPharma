@@ -618,6 +618,40 @@ nav .close {
   color: #29aa4d;
   font-weight: 600;
 }
+.Cart form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+  max-width: 500px;
+}
+.Cart .inputGroup div {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.Cart .inputGroup input {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+  background: #eeeeee;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 1rem;
+}
+.Cart .checkboxGroup {
+  gap: 0.5rem;
+  align-items: center;
+  display: flex;
+}
+.Cart .checkboxGroup .checkbox {
+  margin: 0;
+}
+.Cart button {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  width: fit-content;
+}
 
 @font-face {
   font-family: "Geometria";

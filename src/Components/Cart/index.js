@@ -5,6 +5,11 @@ import Item from "./Item";
 function Index(props) {
     const [cart, setCart] = useContext(CartContext)
 
+    const [name, setName] = useState("")
+    const [phone, setPhone] = useState("")
+    const [email, setEmail] = useState("")
+    const [company, setCompany] = useState("")
+
     return (
         <section className="Cart">
             <div className="container">
@@ -37,16 +42,16 @@ function Index(props) {
 
                 <form action="">
                     <div className="inputGroup">
-                        <div>Ваше имя</div>
-                        <input type="text"/>
+                        <div>Ваше имя *</div>
+                        <input type="text" placeholder="Иван" value={name} onChange={e => setName(e.target.value)}/>
                     </div>
                     <div className="inputGroup">
-                        <div>Ваш телефон</div>
-                        <input type="text"/>
+                        <div>Ваш телефон *</div>
+                        <input type="text" placeholder="+79124322233" value={phone} onChange={e => setPhone(e.target.value)}/>
                     </div>
                     <div className="inputGroup">
-                        <div>Ваш Email</div>
-                        <input type="text"/>
+                        <div>Ваш Email *</div>
+                        <input type="text" placeholder="ivan.ivanov@example.com" value={phone} onChange={e => setEmail(e.target.value)}/>
                     </div>
                     <div className="inputGroup">
                         <div>Название компании (необязательно)</div>
@@ -56,6 +61,7 @@ function Index(props) {
                         <input type="checkbox"/>
                         <div>Согласен с обработкой персональных данных</div>
                     </div>
+                    <button className="greenBtn">Заказать</button>
                 </form>
             </div>
         </section>
