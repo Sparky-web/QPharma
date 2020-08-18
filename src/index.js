@@ -6,11 +6,15 @@ import client from "./utils/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 ReactDOM.render(
-  <Router>
     <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </Router>,
+        <Router>
+            <App />
+        </Router>
+    </ApolloProvider>,
   document.getElementById("root")
 );

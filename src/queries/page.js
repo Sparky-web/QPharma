@@ -1,31 +1,25 @@
 import { gql } from "@apollo/client"
 
 export default gql`
-    query Page ($limit: Int, $start: Int, $sort: String) {
-        categories {
-            uId,
-            name,
-            image {
-                url
-            }
-        },
-        masks (limit: $limit, start: $start, sort: $sort) {
+    query Page {
+        faqs {
             id,
-            name,
-            price,
-            discountPrice,
-            description,
-            isAvailable,
+            question,
+            answer
+        },
+        trustedBies {
             images {
                 url
-            },
-            categoryId,
-            protection
-        },
-        masksConnection {
-            aggregate {
-                totalCount
             }
+        },
+        certificates {
+            images {
+                url
+            }
+        },
+        contents {
+            name,
+            data
         }
     }
 `;

@@ -1,0 +1,44 @@
+.Cart {
+  th {
+    text-align: left;
+  }
+  th, td {
+    padding: 1rem;
+  }
+  th, td {
+    border-bottom: 1px solid #29aa4d;
+  }
+  table {
+    border-spacing: 0;
+    width: 100%;
+    min-width: 600px;
+  }
+  .twrap {
+    width: 100%;
+    overflow: auto;
+  }
+  .amount {
+    display: flex;
+    align-items: center;
+    input {
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      text-align: center;
+      height: 3rem;
+      width: 3rem;
+      background: #e8e8e8;
+    }
+    button {
+      cursor: pointer;
+      outline: none;
+      font-size: 1.5rem;
+      height: 3rem;
+      padding: 0 1rem;
+      border: none;
+      background: #eeeeee;
+      color: #29aa4d;
+      font-weight: 600;
+    }
+  }
+}

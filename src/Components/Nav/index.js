@@ -1,4 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+
+import {CartContext} from "../../utils/CartContext";
+import {Link} from "react-router-dom";
 
 function Navbar(props) {
     const [toggled, setToggle] = useState(false)
@@ -8,11 +11,14 @@ function Navbar(props) {
     const toggle = () => setToggle(!toggled)
 
 
+    const [cart, setCart] = useContext(CartContext)
+
+
     return (
         <nav>
             <div className="container">
                 <div className="wrap">
-                    <div className="logo"><img src={require("../../img/Логотип.png")} alt=""/></div>
+                    <Link to={"/products"} className="logo"><img src={require("../../img/Логотип.png")} alt=""/></Link>
                     <div className="hamburger" onClick={toggle}>
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/menu-rounded.png"/>
                     </div>
@@ -20,14 +26,15 @@ function Navbar(props) {
                         <div className="close" onClick={toggle}>
                             <img src="https://img.icons8.com/ios-glyphs/30/000000/cancel.png"/>
                         </div>
-                        <a href="#">Мы <span className="green">на карте</span></a>
+                        <Link to={"/general"}>Мы <span className="green">на карте</span></Link>
                         <a href="#">По всем вопросам <span className="green">sale@q-pharma.ru</span></a>
                         <a href="#">8 800 301 30 41 <span className="green">Обратный звонок</span></a>
-                        <a href="#">
+                        <Link to={"/cart"}>
                             <span className="cart">
                                 <img src={require("../../img/cart.png")} alt=""/>
+                                <span>{cart.length - 1}</span>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

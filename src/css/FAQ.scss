@@ -1,0 +1,29 @@
+.FAQ {
+  .react-tabs__tab {
+    color: #343433;
+    font-weight: 600;
+    padding: 1rem 0;
+    border-bottom: 1px solid #EEEEEE;
+    img {height: 0.5rem; margin: auto}
+  }
+  .react-tabs__tab-list {
+    list-style-image: url("./img/arrow.svg");
+    li {cursor: pointer}
+  }
+  .react-tabs {
+    display: flex;
+    ul {flex: 1; padding: 0 1rem}
+    .react-tabs__tab-panel--selected {
+      flex: 1;
+      padding: 0 1rem;
+      line-height: 24px;
+
+    }
+    .react-tabs__tab--selected {
+      color: #29aa4d
+    }
+  }
+  @media (max-width: 992px) {
+    .react-tabs {display: block}
+  }
+}

@@ -1,0 +1,65 @@
+.Contacts {
+  background: #eeeeee;
+  position: relative;
+  display: grid;
+}
+.Contacts .yandex-maps {
+  top: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.Contacts iframe {
+  height: 100%;
+  width: 100%;
+}
+.Contacts .gray {
+  font-size: 1rem;
+  color: #898989;
+  font-weight: 600;
+}
+.Contacts .bold {
+  font-weight: 600;
+  color: black;
+  font-size: 1.2rem;
+}
+.Contacts .contacts-card {
+  z-index: 999 !important;
+  margin: 5rem 10rem;
+  background: white;
+  max-width: 400px;
+  padding: 3rem;
+}
+.Contacts .contacts-card > * {
+  padding: 1rem 0;
+}
+.Contacts .contacts-card > * > * {
+  padding: 0.25rem 0;
+}
+.Contacts .office {
+  display: flex;
+  align-items: center;
+}
+.Contacts .office img {
+  margin-left: 0.5rem;
+  margin-bottom: -0.2rem;
+  height: 1rem;
+}
+.Contacts .greenBtn {
+  padding: 1rem;
+  width: fit-content;
+}
+@media (max-width: 1024px) {
+  .Contacts {
+    padding-bottom: 0;
+  }
+  .Contacts .yandex-maps {
+    height: 500px;
+    position: relative;
+  }
+  .Contacts .contacts-card {
+    margin: 0 1rem 3rem 1rem;
+  }
+}
+
+/*# sourceMappingURL=Contacts.css.map */

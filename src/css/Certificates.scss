@@ -1,0 +1,48 @@
+.Certificates {
+  background-size: contain;
+  background: url("./img/Q-PHARM.svg") no-repeat top;
+
+  * {
+    max-width: unset;
+  }
+  .wrap {
+    display: flex !important;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .slick-dots li button:before {
+    height: 18px;
+    font-size: 12px;
+    padding: 0.2rem;
+    color: gray;
+    border-radius: 40px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: #29aa4d;
+    border: 1px solid #73ea94;
+  }
+  .slick-next:before,.slick-prev:before {
+    font-family: inherit;
+    font-size: 20px;
+    border-radius: 100px;
+    border: 1px solid #d5e3e2;
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
+    opacity: .75;
+    color: #29aa4d;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f0f5f5;
+  }
+  .slick-next {
+    right: -3rem;
+  }
+  .slick-prev {
+    left: -4.5rem;
+  }
+  @media (max-width: 1300px) {
+    .slick-next,.slick-prev {
+      display: none !important;
+    }
+  }
+}

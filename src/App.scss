@@ -1,6 +1,12 @@
 @import "css/Navbar";
 @import "css/Offer";
 @import "css/Products";
+@import "css/FAQ";
+@import "css/CallBack";
+@import "css/TrustedBy";
+@import "css/Certificates";
+@import "css/Contacts";
+@import "css/Cart";
 
 @import "fonts/Graph.css";
 
@@ -23,6 +29,10 @@
   src: local('Geometria-Bold'), url('fonts/Geometria-Bold.woff') format('woff');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -31,6 +41,8 @@ body {
 * {
   max-width: 100%;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
 }
 
 :root {
@@ -85,4 +97,38 @@ body {
 }
 section {
   padding: 3rem 0;
+}
+.greenBtn {
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  border: none;
+  padding: 1rem;
+  background:  #29aa4d;
+  color: white;
+  font-size: 1rem;
+  * {margin: 0 0.2rem }
+  align-items: center;
+}
+.transparentBtn {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #29aa4d;
+  padding: 1rem;
+}
+
+footer {
+  background: #eeeeee;
+  padding: 3rem 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.loader-wrap {
+  width: 100%;
+  display: flex;
 }

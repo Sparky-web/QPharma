@@ -24,14 +24,13 @@ nav {
   }
   .cart {
     position: relative;
-    &:after {
+    span {
       top: -1.5rem;
       right: -0.5rem;
       height: 0.5rem;
-      content: "1";
       width: 0.5rem;
       background: white;
-      padding: 0.5rem;
+      padding: 0.7rem;
       position: absolute;
       border-radius: 50px;
       display: flex;
