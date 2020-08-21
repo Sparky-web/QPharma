@@ -1,15 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {CartContext} from "../../utils/CartContext";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function Card(props) {
     const [cart, setCart] = useContext(CartContext)
     const [inCart, setInCart] = useState(false)
+    const history = useHistory()
 
-    const imageUrl =
-        process.env.NODE_ENV !== "development"
-            ? props.el.images?.[0]?.url
-            : process.env.REACT_APP_BACKEND_URL + props.el.images?.[0]?.url;
+    const imageUrl = process.env.REACT_APP_BACKEND_URL + props.el.images?.[0]?.url;
 
     const addToCart = (item) => {
         setInCart(true)
@@ -47,7 +45,10 @@ function Card(props) {
                     <button className="transparentBtn">К корзине</button>
                 </Link>
                 <button className="greenBtn" style={{display: inCart ? "none" : "flex"}} onClick={() => addToCart(props.el)}><div>В корзину</div><img src={require("../../img/cart.svg")} alt=""/></button>
-                <button className="transparentBtn" style={{display: inCart ? "none" : "flex"}}>Купить в 1 клик</button>
+                <button className="transparentBtn" style={{display: inCart ? "none" : "flex"}} onClick={() => {
+                    addToCart(props.el)
+                    history.push("/cart")
+                }}>Купить в 1 клик</button>
             </div>
         </div>
     );

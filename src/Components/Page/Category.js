@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useParams, useRouteMatch} from "react-router-dom"
+import {useParams} from "react-router-dom"
 import { useQuery } from "@apollo/client";
 import PRODUCTS_QUERY from "../../queries/products"
 import Card from "./card";

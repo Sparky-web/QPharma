@@ -4,7 +4,7 @@ function Contacts({content}) {
     const data = content.find(el => el.name === "Contacts").data;
 
     return (
-        <section className="Contacts">
+        <section className="Contacts" id="contacts">
 
             <div className="contacts-card">
                 <div>

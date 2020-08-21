@@ -33,12 +33,9 @@ function NewProducts(props) {
                 <div className="prettified-tabs">
                     {
                         data.categories.map((el, i) => {
-                            const imageUrl =
-                                process.env.NODE_ENV !== "development"
-                                    ? el?.image?.url
-                                    : process.env.REACT_APP_BACKEND_URL + el?.image?.url;
+                            const imageUrl = process.env.REACT_APP_BACKEND_URL + el?.image?.url;
                             return (
-                                <Link to={"/products/" + el.categoryName} onClick={() => setActive(el.categoryName)}
+                                <Link to={"/market/" + el.categoryName} onClick={() => setActive(el.categoryName)}
                                       style={{backgroundImage: `url("${imageUrl}")`}} key={i}>
                                     <div>
                                         <h5>{el.name}
@@ -54,7 +51,7 @@ function NewProducts(props) {
                     <span>Показать</span>
                     <ul className="tabs">
                         <li>
-                            <Link onClick={() => setActive("all")} to={"/products"} className={active === "all" ? "active" : ""}>
+                            <Link onClick={() => setActive("all")} to={"/market"} className={active === "all" ? "active" : ""}>
                                 Все
                                 <span>
                                     {data.products.length}
@@ -63,7 +60,7 @@ function NewProducts(props) {
                         </li>
                         {data.categories.map((el, i) => (
                             <li key={i}>
-                                <Link onClick={() => setActive(el.categoryName)} to={"/products/" + el.categoryName} className={active === el.categoryName ? "active" : ""}>
+                                <Link onClick={() => setActive(el.categoryName)} to={"/market/" + el.categoryName} className={active === el.categoryName ? "active" : ""}>
                                     {el.name}
                                     <span>
                                     {data.products.filter(e => e.categoryName === el.categoryName).length}
@@ -77,10 +74,10 @@ function NewProducts(props) {
                     }} value={sort} placeholder="Select an option"/>
                 </div>
                 <Switch>
-                    <Route exact path="/products">
+                    <Route exact path="/market">
                         <Category sort={sort}/>
                     </Route>
-                    <Route exact path="/products/:categoryName">
+                    <Route exact path="/market/:categoryName">
                         <Category sort={sort}/>
                     </Route>
                 </Switch>

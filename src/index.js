@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
     <ApolloProvider client={client}>
-        <Router>
+        <Router basename="/">
             <App />
         </Router>
     </ApolloProvider>,

@@ -42,9 +42,7 @@ function Certificates(props) {
                 <Slider {...settings}>
                     {
                         props.data[0].images.map(({url}, i) => {
-                            const imageUrl = process.env.NODE_ENV !== "development"
-                                ? url
-                                : process.env.REACT_APP_BACKEND_URL + url;
+                            const imageUrl = process.env.REACT_APP_BACKEND_URL + url;
                             return <div className="wrap" key={i}>
                                 <img src={imageUrl} alt=""/>
                             </div>

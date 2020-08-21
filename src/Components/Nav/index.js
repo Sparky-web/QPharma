@@ -18,7 +18,7 @@ function Navbar(props) {
         <nav>
             <div className="container">
                 <div className="wrap">
-                    <Link to={"/products"} className="logo"><img src={require("../../img/Логотип.png")} alt=""/></Link>
+                    <Link to={"/market"} className="logo"><img src={require("../../img/Логотип.png")} alt=""/></Link>
                     <div className="hamburger" onClick={toggle}>
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/menu-rounded.png"/>
                     </div>
@@ -26,9 +26,9 @@ function Navbar(props) {
                         <div className="close" onClick={toggle}>
                             <img src="https://img.icons8.com/ios-glyphs/30/000000/cancel.png"/>
                         </div>
-                        <Link to={"/general"}>Мы <span className="green">на карте</span></Link>
+                        <a href={"https://yandex.ru/maps/-/CCQtmVWLpC"}>Мы <span className="green">на карте</span></a>
                         <a href="#">По всем вопросам <span className="green">sale@q-pharma.ru</span></a>
-                        <a href="#">8 800 301 30 41 <span className="green">Обратный звонок</span></a>
+                        <a href="#call">8 800 301 30 41<span className="green">Обратный звонок</span></a>
                         <Link to={"/cart"}>
                             <span className="cart">
                                 <img src={require("../../img/cart.png")} alt=""/>
