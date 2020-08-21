@@ -9,6 +9,7 @@ import Redirect_ from "../Page/redirect.js"
 
 import {CartProvider} from "../../utils/CartContext";
 import Success from "./Success";
+import Product from "../Product/index";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <Nav />
             <Switch>
                 <Route exact path="/">
-                    <Redirect_ />
+                    <Page />
                 </Route>
                 <Route path="/market">
                     <Page />
@@ -27,6 +28,9 @@ function App() {
                 </Route>
                 <Route path="/cart">
                     <Cart/>
+                </Route>
+                <Route path="/products/:id">
+                    <Product />
                 </Route>
             </Switch>
         </CartProvider>

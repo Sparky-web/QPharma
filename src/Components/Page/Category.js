@@ -36,7 +36,7 @@ function Category(props) {
         <div/>
         <div/>
     </div>
-    if(error) return <h1>error: {JSON.stringify(error)}</h1>
+    if(error) return <h1>Произошла ошибка, попробуйте позже</h1>
 
     return (
         <div className="wrap">

@@ -70,7 +70,7 @@ function Index(props) {
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th>{cart.reduce((accomulator, val) => accomulator + val.discountPrice * val.amount)} ₽</th>
+                                <th>{cart.reduce((accomulator, val) => accomulator + val?.discountPrice * val?.amount)} ₽</th>
                             </tr>
                         </tfoot>
                     </table>

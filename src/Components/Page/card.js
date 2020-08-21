@@ -12,14 +12,13 @@ function Card(props) {
     const addToCart = (item) => {
         setInCart(true)
         setCart(prevCart => [...prevCart, {...item, amount: 1}])
-
     }
 
     return (
-        <div className="card" key={props.el.id}>
+        <div className="product--card-tab" key={props.el.id}>
             <div className="top">
                 <div
-                    className="discount">-{100 - Math.round(props.el.discountPrice / (props.el.price / 100))}%
+                    className="product--discount">-{100 - Math.round(props.el.discountPrice / (props.el.price / 100))}%
                 </div>
                 <span
                     className={props.el.isAvailable ? "available" : "not-available"}>{props.el.isAvailable ? "✓ В наличии" : "Нет в наличии"}
@@ -27,15 +26,15 @@ function Card(props) {
             </div>
             <div className="image"><img src={imageUrl} alt=""/>
             </div>
-            <div className="name">{props.el.name}</div>
+            <Link to={`/products/${props.el.id}`} className="name">{props.el.name}</Link>
             <div className="price-block">
-                <div className="protection">
+                <div className="product--protection">
                     <img src={require("../../img/protectopn.png")} alt=""/>
                     <div>
                         {props.el.protection !== "-" ? props.el.protection : ""}
                     </div>
                 </div>
-                <div className="price">
+                <div className="product--price">
                     {props.el.discountPrice}p
                     <span className="prevPrice">{props.el.price}p</span>
                 </div>

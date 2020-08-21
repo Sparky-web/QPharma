@@ -14,10 +14,13 @@ function Item({item}) {
     }
     const decreaseCount = () => {
         setCart(prevCart => {
-            const cart = [...prevCart];
+            let cart = [...prevCart];
             const i = prevCart.indexOf(item);
             if(cart[i].amount > 0) {
                 cart[i].amount -= 1
+            }
+            if(cart[i].amount === 0) {
+                cart = cart.filter(el => el.id !== item.id)
             }
             return cart
         })
@@ -28,7 +31,7 @@ function Item({item}) {
             <th>{item.name}</th>
             <td>{item.discountPrice} ₽</td>
             <td>
-                <div className="amount">
+                <div className="product--amount">
                     <button onClick={increaseCount}>+</button>
                     <input value={item.amount} readOnly type="text"/>
                     <button onClick={decreaseCount}>-</button>
