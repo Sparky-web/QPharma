@@ -1,7 +1,7 @@
 import React from 'react';
 import {gql, useQuery} from "@apollo/client";
 
-function Footer({content}) {
+function Footer() {
     const {data: _data, loading,  error} = useQuery(gql`
         query {
             contents(where: {name: "footer"}) {
@@ -23,7 +23,12 @@ function Footer({content}) {
     return (
         <footer>
             <div className="container">
-                <div>{data.text1}</div>
+                <div className="footer--text-block">
+                    <div>{data.text1}</div>
+                    <div>ООО "Привилегия Фарм" лицензия ЛО-77-02-008717</div>
+                    <div>ИП Шиглов Евгений Геннадьевич ИНН 025507074146  ОГРНИП 318028000196931</div>
+                    <div>ИП Лабин Роман Викторович ИНН 774334481505 ОГРНИП 320774600323386</div>
+                </div>
                 <a href={data.link} className="green">{data.text2}</a>
             </div>
         </footer>

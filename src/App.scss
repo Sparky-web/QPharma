@@ -130,6 +130,19 @@ footer {
     justify-content: space-between;
   }
 }
+.footer--text-block {
+  display: grid;
+  gap: 0.5rem;
+}
+@media (max-width: 1024px) {
+  footer .container {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
 .loader-wrap {
   width: 100%;
   display: flex;
@@ -166,3 +179,4 @@ footer {
 .ReactModal__Overlay {
   z-index: 999;
 }
+
