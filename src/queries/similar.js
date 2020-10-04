@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client"
 
 export default gql`
-    query Product($id: ID!) {
-        product(id: $id) {
+    query Similar($id: JSON) {
+        products(where: {id: $id}) {
             id,
             name,
             price,
@@ -12,15 +12,7 @@ export default gql`
             images {
                 url
             },
-            protection,
-            categoryName,
-            sizes {
-                size
-            }
-        },
-        products {
-            id,
-            categoryName
+            protection
         }
     }
 `

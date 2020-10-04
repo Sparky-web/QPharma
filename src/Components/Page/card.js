@@ -40,11 +40,11 @@ function Card(props) {
                 </div>
             </div>
             <div className="buttons">
-                <Link to="/cart" style={{display: inCart ? "block" : "none"}}>
+                <Link to="/cart" style={{display: cart.find(el => el.id === props.el.id) ? "block" : "none"}}>
                     <button className="transparentBtn">К корзине</button>
                 </Link>
-                <button className="greenBtn" style={{display: inCart ? "none" : "flex"}} onClick={() => addToCart(props.el)}><div>В корзину</div><img src={require("../../img/cart.svg")} alt=""/></button>
-                <button className="transparentBtn" style={{display: inCart ? "none" : "flex"}} onClick={() => {
+                <button className="greenBtn" style={{display: cart.find(el => el.id === props.el.id) ? "none" : "flex"}} onClick={() => addToCart(props.el)}><div>В корзину</div><img src={require("../../img/cart.svg")} alt=""/></button>
+                <button className="transparentBtn" style={{display: cart.find(el => el.id === props.el.id) ? "none" : "flex"}} onClick={() => {
                     addToCart(props.el)
                     history.push("/cart")
                 }}>Купить в 1 клик</button>

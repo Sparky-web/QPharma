@@ -75,10 +75,10 @@ function NewProducts(props) {
                 </div>
                 <Switch>
                     <Route exact path="/market">
-                        <Category sort={sort}/>
+                        <Category sort={sort} scrollY={window.pageYOffset}/>
                     </Route>
                     <Route exact path="/market/:categoryName">
-                        <Category sort={sort}/>
+                        <Category sort={sort} scrollY={window.pageYOffset}/>
                     </Route>
                 </Switch>
                 <div className="line"/>

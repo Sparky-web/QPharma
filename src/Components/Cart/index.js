@@ -23,7 +23,8 @@ function Index(props) {
             let _cart = cart.filter(el => el)
             const order = _cart.map(el => `
 Товар: ${el.name},
-Кол-во: ${el.amount}
+Кол-во: ${el.amount},
+Размер: ${el.size || "Не указан"},
 Цена за штуку: ${el.discountPrice} ₽
 Цена за позицию: ${el.discountPrice * el.amount} ₽
 `)

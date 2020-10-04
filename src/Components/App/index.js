@@ -18,7 +18,10 @@ function App() {
             <Nav />
             <Switch>
                 <Route exact path="/">
-                    <Page />
+                    <Redirect to={"/market"}/>
+                </Route>
+                <Route exact path="/products/">
+                    <Redirect to={"/market"}/>
                 </Route>
                 <Route path="/market">
                     <Page />

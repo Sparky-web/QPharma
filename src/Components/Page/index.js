@@ -1,14 +1,18 @@
-import React from 'react';
-import Offer from "./Offer";
-import NewProducts from "./NewProducts";
-import Faq from "./FAQ";
+import React, {Suspense} from 'react';
 import {useQuery} from "@apollo/client";
 import PAGE_QUERY from "../../queries/page"
-import CallBack from "./CallBack";
-import TrustedBy from "./TrustedBy";
-import Certificates from "./Certificates";
-import Contacts from "./Contacts";
-import Footer from "./Footer";
+
+
+import Offer from "./Offer";
+import NewProducts from "./NewProducts";
+
+
+const Faq = React.lazy(() => import("./FAQ"));
+const CallBack = React.lazy(() => import("./CallBack"));
+const TrustedBy = React.lazy(() => import("./TrustedBy"));
+const Certificates = React.lazy(() => import("./Certificates"));
+const Contacts = React.lazy(() => import("./Contacts"));
+const Footer = React.lazy(() => import("./Footer"));
 
 function Page(props) {
     const { data, loading, error } = useQuery(PAGE_QUERY)
@@ -29,12 +33,19 @@ function Page(props) {
         <div>
             <Offer content={data.contents}/>
             <NewProducts />
-            <Faq data={data.faqs}/>
-            <CallBack />
-            <TrustedBy data={data.trustedBies}/>
-            <Certificates data={data.certificates}/>
-            <Contacts content={data.contents}/>
-            <Footer content={data.contents}/>
+            <Suspense fallback={<div style={{display: "grid"}}>
+                <div className="lds-ripple">
+                    <div/>
+                    <div/>
+                </div>
+            </div>}>
+                <Faq data={data.faqs}/>
+                <CallBack />
+                <TrustedBy data={data.trustedBies}/>
+                <Certificates data={data.certificates}/>
+                <Contacts content={data.contents}/>
+                <Footer content={data.contents}/>
+            </Suspense>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {CartContext} from "../../utils/CartContext";
+import {Link} from "react-router-dom";
 
 function Item({item}) {
     const [cart, setCart] = useContext(CartContext)
@@ -28,13 +29,13 @@ function Item({item}) {
 
     return (
         <tr>
-            <th>{item.name}</th>
+            <th><Link to={"/products/" + item.id}>{item.name}</Link></th>
             <td>{item.discountPrice} ₽</td>
             <td>
                 <div className="product--amount">
-                    <button onClick={increaseCount}>+</button>
-                    <input value={item.amount} readOnly type="text"/>
                     <button onClick={decreaseCount}>-</button>
+                    <input value={item.amount} readOnly type="text"/>
+                    <button onClick={increaseCount}>+</button>
                 </div>
             </td>
             <td>{item.discountPrice * item.amount} ₽</td>

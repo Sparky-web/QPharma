@@ -25,7 +25,9 @@ function SmallTabs(props) {
             <div className="product--small-cards-tab">
                 <p>Похожие товары</p>
                 <div className="wrap">
-                    {data.products.map(product => (<SmallTab product={product}/>))}
+                    {data.products.map(product => {
+                        return props.product.id !== product.id ? <SmallTab key={product.id} product={product}/> : <></>
+                    })}
                 </div>
             </div>
         </div>

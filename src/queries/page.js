@@ -14,7 +14,8 @@ export default gql`
         },
         certificates {
             images {
-                url
+                url,
+                previewUrl
             }
         },
         contents {

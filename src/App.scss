@@ -142,3 +142,27 @@ footer {
   padding: 5rem;
   text-align: center;
 }
+
+.ReactModal__Content {
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  right: unset !important;
+  bottom: unset !important;
+  transform: translate(-50%, -50%);
+  .certeficateImg {
+    margin-top: 1rem;
+    width: 450px;
+  }
+  .closeIcon {
+    margin-left: auto;
+  }
+}
+.ReactModal__Overlay {
+  z-index: 999;
+}

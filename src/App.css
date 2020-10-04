@@ -109,6 +109,12 @@ nav .close {
   color: #343433;
   opacity: 0.35;
 }
+@media (max-width: 760px) {
+  .Offer {
+    height: auto;
+    padding: 4rem 0;
+  }
+}
 
 .Products {
   padding-bottom: 0;
@@ -339,6 +345,13 @@ nav .close {
 .Products .react-tabs, .product .react-tabs {
   display: grid;
 }
+@media (max-width: 760px) {
+  .Products .react-tabs__tab-panel, .product .react-tabs__tab-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 
 .FAQ .react-tabs__tab {
   color: #343433;
@@ -503,7 +516,7 @@ nav .close {
   font-size: 1.2rem;
 }
 .Contacts .contacts-card {
-  z-index: 999 !important;
+  z-index: 9 !important;
   margin: 5rem 10rem;
   background: white;
   max-width: 400px;
@@ -555,6 +568,10 @@ nav .close {
 }
 .Cart th, .Cart td {
   padding: 1rem;
+}
+.Cart th a, .Cart td a {
+  text-decoration: none;
+  color: black;
 }
 .Cart th, .Cart td {
   border-bottom: 1px solid #29aa4d;
@@ -613,7 +630,7 @@ nav .close {
 }
 
 .product--available, .product--not-available {
-  margin-left: 5rem;
+  margin-left: auto;
 }
 
 .product--logo {
@@ -702,12 +719,14 @@ nav .close {
 }
 
 .product--size {
+  cursor: pointer;
   background: none;
   font-family: inherit;
   height: 3rem;
   width: 3rem;
   font-size: 1rem;
   border: 1px solid #c6c6c6;
+  outline: none;
 }
 
 .product--size.selected {
@@ -746,6 +765,22 @@ nav .close {
 .product h2 {
   font-size: 2rem;
 }
+@media (max-width: 992px) {
+  .product .container > .product--card {
+    display: block;
+  }
+  .product .product--img img {
+    width: 400px;
+  }
+  .product .product--similar {
+    border: none;
+  }
+}
+@media (max-width: 1140px) {
+  .product .product--logo {
+    display: none;
+  }
+}
 
 .product--similar {
   border-left: 1px solid #e8e8e8;
@@ -755,8 +790,14 @@ nav .close {
 .product--small-cards-tab p {
   font-weight: 600;
 }
+.product--small-cards-tab .wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
 
 .product--small-card {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 0.5rem;
@@ -959,6 +1000,31 @@ footer .container {
   justify-content: center;
   padding: 5rem;
   text-align: center;
+}
+
+.ReactModal__Content {
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  right: unset !important;
+  bottom: unset !important;
+  transform: translate(-50%, -50%);
+}
+.ReactModal__Content .certeficateImg {
+  margin-top: 1rem;
+  width: 450px;
+}
+.ReactModal__Content .closeIcon {
+  margin-left: auto;
+}
+
+.ReactModal__Overlay {
+  z-index: 999;
 }
 
 /*# sourceMappingURL=App.css.map */

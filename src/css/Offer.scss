@@ -18,4 +18,8 @@
     color: #343433;
     opacity: 0.35;
   }
+  @media(max-width: 760px) {
+    height: auto;
+    padding: 4rem 0;
+  }
 }

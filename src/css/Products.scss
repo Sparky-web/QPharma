@@ -226,4 +226,11 @@
   .react-tabs {
     display: grid;
   }
+  @media(max-width: 760px) {
+    .react-tabs__tab-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem
+    }
+  }
 }

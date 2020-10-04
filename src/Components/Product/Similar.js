@@ -1,15 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from "../Page/card";
-import products from "../../queries/products";
 import {useQuery} from "@apollo/client";
+import similar from "../../queries/similar";
+import shuffle from "lodash/shuffle"
+
+function randomInteger(products, categoryName) {
+    // случайное число от min до (max+1)
+    let ids = products.filter(el => {
+        return el.categoryName !== categoryName
+    })
+    ids = ids.map(el => el.id)
+    ids = shuffle(ids)
+
+    return ids.slice(0, 3)
+}
 
 function Similar(props) {
-    const {data, loading, error} = useQuery(products, {
+    const [ids, setIds] = useState([])
+    const {data, loading, error} = useQuery(similar, {
         variables: {
             limit: 3,
-            categoryName: props.categoryName
+            id: ids.length ? ids : 0
         }
     })
+
+    useEffect(() => {
+        setIds(randomInteger(props.ids, props.product.categoryName))
+    }, [])
+
 
     if(loading) return <div className="lds-ripple">
         <div/>

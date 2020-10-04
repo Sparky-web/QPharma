@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom"
 import { useQuery } from "@apollo/client";
 import PRODUCTS_QUERY from "../../queries/products"
@@ -30,6 +30,9 @@ function Category(props) {
                 products: [...prev.products, ...fetchMoreResult.products]
             });
         }
+    })
+    useEffect(() => {
+        window.scroll(0, props.scrollY)
     })
 
     if(loading) return <div className="lds-ripple">
