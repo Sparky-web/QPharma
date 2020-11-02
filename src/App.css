@@ -112,7 +112,7 @@ nav .close {
 @media (max-width: 760px) {
   .Offer {
     height: auto;
-    padding: 4rem 0;
+    padding: 9rem 0;
   }
 }
 
@@ -782,6 +782,10 @@ nav .close {
   }
 }
 
+.product--logo {
+  display: none;
+}
+
 .product--similar {
   border-left: 1px solid #e8e8e8;
   padding-left: 1rem;
@@ -955,6 +959,9 @@ section {
 }
 
 .greenBtn {
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
   cursor: pointer;
   display: flex;
   font-family: inherit;
@@ -1015,7 +1022,48 @@ footer .container {
   text-align: center;
 }
 
+.newsletter-popup {
+  display: grid;
+  gap: 0;
+  text-align: center;
+}
+.newsletter-popup img {
+  cursor: pointer;
+  justify-self: end;
+}
+.newsletter-popup h2 {
+  margin: 1rem 0;
+}
+.newsletter-popup p {
+  margin-top: 0;
+}
+.newsletter-popup form {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+.newsletter-popup form input {
+  border: none;
+  background: #f3f3f3;
+  padding: 1.2rem;
+}
+@media (max-width: 760px) {
+  .newsletter-popup form {
+    grid-template-columns: auto;
+  }
+}
+
+.ReactModal__Content[aria-label=Рассылка] {
+  max-width: 90%;
+  width: 700px;
+}
+
 .ReactModal__Content {
+  max-width: 90%;
+  border-radius: 25px;
+  border: none !important;
   margin: auto;
   height: fit-content;
   width: fit-content;
@@ -1037,6 +1085,7 @@ footer .container {
 }
 
 .ReactModal__Overlay {
+  background: rgba(0, 0, 0, 0.25) !important;
   z-index: 999;
 }
 

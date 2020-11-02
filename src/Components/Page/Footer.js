@@ -24,6 +24,7 @@ function Footer() {
         <footer>
             <div className="container">
                 <div className="footer--text-block">
+                    <div>Группа компаний QPharma</div>
                     <div>ООО "Привилегия Фарм" лицензия ЛО-77-02-008717</div>
                     <div>ИП Шиглов Евгений Геннадьевич ИНН 025507074146  ОГРНИП 318028000196931</div>
                     <div>ИП Лабин Роман Викторович ИНН 774334481505 ОГРНИП 320774600323386</div>
