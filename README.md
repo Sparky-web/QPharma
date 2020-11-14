@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## QPharma
-# E-commerce website built on React JS and Strapi (as CMS)
+# QPharma
+## E-commerce website built on React JS and Strapi (as CMS)
 
 To start app `npm start`
 
